@@ -99,7 +99,7 @@ module.exports = (context, callback) => {
 
 #### Nullability
 
-All types are nullable, but nullability can only be specified by setting "defaultValue": null in the NamedParameter definition. That is to say, if a default value is provided, the type is no longer nullable.
+If the value of a field is null, then set it to null and do not remove this field from the object.
 
 ### API Gateway
 
