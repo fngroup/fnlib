@@ -1,4 +1,4 @@
-# Fnlib - 一个 FaaS 的简单规范
+# Fnlib - 一个简单的 FaaS 规范
 
 [English](https://github.com/fngroup/fnlib/blob/master/README.md) | [中文翻译](https://github.com/fngroup/fnlib/blob/master/CN_README.md) 
 
