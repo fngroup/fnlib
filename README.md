@@ -6,7 +6,7 @@ Fnlib(Function Lib) is a simple specification that is designed to make it easy f
 
 Only one client usage protocol is defined by fnlib, so fnlib doesn't care how your server is implemented. In order to give developers the best experience, it is best to follow the fnlib specification at the interface level.
 
-The specification of fnlib includes API gateway, function context, function parameters, HTTP request, error handling, security, and GraphQL.
+The specification of fnlib includes API gateway, function context, function parameters, HTTP request, error handling, and GraphQL.
 
 ## What is FaaS?
 
@@ -48,7 +48,7 @@ In an asynchronous language like JavaScript, fnlib requires that each function u
 
 As seen in the function above, each function has two parameters: ```context``` and ```callback```.
 
-##### context
+**context**
 
 Context is the object used to access the function execution context, Such as the parameters in the url, http header.
 
@@ -75,7 +75,7 @@ For example:
 
 This JSON fragment may indicate that the execution context specifically accesses authenticated user id and email addresses. if ```currentUser``` is null, the developer can determine that the currently accessed user is not logged in. 
 
-##### callback
+**callback**
 
 ```Callback``` is to end the function or send http response, which has two parameters.
 
@@ -83,7 +83,7 @@ This JSON fragment may indicate that the execution context specifically accesses
 callback(data[, httpHeaders]);
 ```
 
-Parameter |type    | descriptions
+Parameter Name |type    | descriptions
 ------|--------|------------
 data| Any | The data want to return
 httpHeaders  | object | A key-value pairs that represent HTTP Headers.
@@ -99,18 +99,20 @@ module.exports = (context, callback) => {
 
 ### API Gateway
 
-### Context
+In the API request, if it is a POST, PUT or DELETE request, the parameter must be sent in JSON form; if it is a GET request, the parameter must be sent in the form of a key-value pair (i.e, ```a=1&b=2```).
 
-### HTTP
-
-#### Request
-
-#### Response
+Each API must have CORS turned on (or provide a switch) to ensure that the JavaScript application is available.
 
 ### GraphQL
 
 ### Errors
 
-### Security
 
 
+### TODO
+
+1. GraphQL specification
+
+### Acknowledgements
+
+The software contained within this repository has been developed and is MIT licensed. The specification itself is not intended to be owned by a specific corporate entity, and has been developed in conjunction with other developers and organizations.
