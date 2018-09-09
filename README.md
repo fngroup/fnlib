@@ -56,9 +56,9 @@ If function is consumed over HTTP, ```context``` object **MUST** contain the fol
 
 Field |type    | descriptions
 ------|--------|------------
-params| object | Parameters that are transmitted via http or function call
-http  | object | null if not accessed via http, otherwise an object
-http.headers| object | If accessed via HTTP, an object containing header values
+params| Object | Parameters that are transmitted via http or function call
+http  | Object | null if not accessed via http, otherwise an object
+http.headers| Object | If accessed via HTTP, an object containing header values
 
 Vendors can also add other custom objects to the context, such as current user information, system environment variables, and so on. 
 
@@ -86,7 +86,7 @@ callback(data[, httpHeaders]);
 Parameter Name |type    | descriptions
 ------|--------|------------
 data| Any | The data want to return
-httpHeaders  | object | A key-value pairs that represent HTTP Headers.
+httpHeaders  | Object | A key-value pairs that represent HTTP Headers.
 
 For example, to return an html that's of type ```application/html```:
 
@@ -97,17 +97,83 @@ module.exports = (context, callback) => {
 }
 ```
 
+#### Nullability
+
+All types are nullable, but nullability can only be specified by setting "defaultValue": null in the NamedParameter definition. That is to say, if a default value is provided, the type is no longer nullable.
+
 ### API Gateway
 
 In the API request, if it is a POST, PUT or DELETE request, the parameter must be sent in JSON form; if it is a GET request, the parameter must be sent in the form of a key-value pair (i.e, ```a=1&b=2```).
 
 Each API must have CORS turned on (or provide a switch) to ensure that the JavaScript application is available.
 
-### GraphQL
-
 ### Errors
 
+Errors returned by Fnlib-compliant services must follow the following JSON format:
 
+``` javascript
+{
+  "error": {
+    "type": "ErrorType",
+    "message": "Something was oops",
+    "payload": {}
+  }
+}
+```
+
+If there are no errors, the error should be null, Other fields are explained below:
+
+Field Name |type    | descriptions
+------|--------|------------
+type| String | The type of error
+message  | String | Detailed Error message
+payload | Object | An optional object that can provide additional error details
+
+The error type is as follows:
+
+Type          | descriptions                                               | HTTP Code
+--------------|------------------------------------------------------------|-----------
+FatalError    | Errors thrown inside the program (usually caused by throw) | 500
+AuthorizationError | Lack of authorization                                 | 4xx
+ValueError    | Lack of parameters or not passing type-safety checks       | 400
+OtherError    | Other missing error                                        | 500
+
+If a parameter error occurs, we recommend describing it in the payload.
+
+If a type error occurs or there is a missing parameter error, we recommend the following JSON schema:
+
+``` javascript
+{
+    "payload": {
+        "required": [{
+            "param": "PARAM_NAME",
+            "type": "TYPE_NAME"
+        }],
+        "invalid": [{
+            "param": "PARAM_NAME",
+            "expected": {
+                "type": "TYPE_NAME"
+            },
+            "received": {
+                "type": "string",
+                "value": "hello world"
+            }
+        }]
+    }
+}
+```
+
+Data ```type``` is as follow:
+
+Type Name |
+----------|
+String    |
+Object    |
+Number    |
+Boolean   |
+Byte      |
+Float     |
+Null      |
 
 ### TODO
 
