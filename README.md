@@ -16,9 +16,16 @@ FaaS was first introduced in 2014 with hook.io, but was popularized by Amazon’
 
 In addition to US companies, China's Aliyun and Tencent Cloud have also launched the FaaS platform, in addition to two startups doing related work (bomb and miniapp cloud).
 
-## What is Fnlib?
-
 ## Why Fnlib?
+
+### Reduced design cost
+
+Fnlib is, as its most simple specification, an outsourcing solution. Since you're using a predefined specification that many other people will also be using we see an effect: You don't have to care about project documentation and business logic, because these are already designed.
+
+### well-designed specification for human
+
+Serverless has grown wildly in recent years, and every manufacturer has its own standards. In order to be compatible with multiple platforms, developers inevitably have to write a lot of logic to be compatible. All of them also derive some open source software to be compatible with multiple implementations with one interface, but these open source software are currently independent of each other.
+Fnlib wants to provide a standard set of specifications that let developers use the FaaS interface just like building a Web page.
 
 ## Specifications
 
