@@ -2,7 +2,7 @@
 
 ## Function as a Service Lib
 
-Fllib(Function Lib) is a simple specification that is designed to make it easy for individual developers and businesses to use it as a reference to implement specific functionality.
+Fnlib(Function Lib) is a simple specification that is designed to make it easy for individual developers and businesses to use it as a reference to implement specific functionality.
 
 Only one client usage protocol is defined by fnlib, so fnlib doesn't care how your server is implemented. In order to give developers the best experience, it is best to follow the fnlib specification at the interface level.
 
