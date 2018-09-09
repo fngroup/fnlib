@@ -1,5 +1,7 @@
 # Fnlib - 一个针对 FaaS 的简单规范.
 
+[English](https://github.com/fngroup/fnlib/blob/master/README.md) | [中文翻译](https://github.com/fngroup/fnlib/blob/master/CN_README.md) 
+
 ## Function as a Service Lib
 
 Fnlib（Function Lib）是一个简单的 FaaS 规范，旨在使个人开发者和企业可以轻松地将其作为参考以实现具体的 FaaS 功能。
@@ -26,7 +28,7 @@ FaaS 于 2014 年由 hook.io 首次引入，但由亚马逊的 AWS Lambda 以及
 
 Fnlib 是一个最简单的规范，也是一种外包解决方案。由于你使用的是很多人使用过的规范，我们所预估的结果是：你不必关心项目文档和业务涉及，因为这些已经设计好了。
 
-### 为人类编写的良好设计的规范
+### 为人类编写的拥有良好设计的规范
 
 无服务器近年来发展迅速，每个制造商都有自己的标准。 为了与多个平台兼容，开发人员不可避免地要编写大量逻辑以实现兼容。 所有这些软件还衍生出一些开源软件，以便与一个接口的多个实现兼容，但这些开源软件目前彼此独立。
 

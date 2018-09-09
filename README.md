@@ -1,5 +1,7 @@
 # Fnlib - A simple specification for FaaS.
 
+[English](https://github.com/fngroup/fnlib/blob/master/README.md) | [中文翻译](https://github.com/fngroup/fnlib/blob/master/CN_README.md) 
+
 ## Function as a Service Lib
 
 Fnlib(Function Lib) is a simple specification that is designed to make it easy for individual developers and businesses to use it as a reference to implement specific functionality.
