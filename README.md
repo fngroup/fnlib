@@ -30,11 +30,76 @@ Fnlib wants to provide a standard set of specifications that let developers use 
 
 ## Specifications
 
+## Function
+
+The **Function** is the most basic component of each FaaS program.
+
+Given a **Function** in JavaScript is like this:
+
+``` javascript
+module.exports = async function demo_function (context, callback) {
+    /*your code*/
+}
+```
+
+In an asynchronous language like JavaScript, Fblib requires that each function use **async** to avoid problems caused by asynchronous.
+
+### Parameters
+
+As seen in the function above, each function has two parameters: ```context``` and ```callback```.
+
+#### context
+
+Context is the object used to access the function execution context, Such as the parameters in the url, http header.
+
+If function is consumed over HTTP, ```context``` object **MUST** contain the following fields:
+
+Field |type    | descriptions
+------|--------|------------
+params| object | Parameters that are transmitted via http or function call
+http  | object | null if not accessed via http, otherwise an object
+http.headers| object | If accessed via HTTP, an object containing header values
+
+Vendors can also add other custom objects to the context, such as current user information, system environment variables, and so on. 
+
+For example:
+
+``` javascript
+"context": {
+    "currentUser": {
+        "_id": "000000", 
+        "username": "fnlib"
+    }
+}
+```
+
+This json fragment may indicate that the execution context specifically accesses authenticated user id and email addresses. if ```currentUser``` is null, the developer can determine that the currently accessed user is not logged in. 
+
+#### callback
+
+```Callback``` is to end the function or send http response, which has two parameters.
+
+``` javascript
+callback(data[, httpHeaders]);
+```
+
+Parameter |type    | descriptions
+------|--------|------------
+data| Any | The data want to return
+httpHeaders  | object | A key-value pairs that represent HTTP Headers.
+
+For example, to return an html that's of type ```application/html```:
+
+``` javascript
+module.exports = (context, callback) => {
+    const html = fs.readFileSync('./index.html');
+    callback(html, { 'Content-Type': 'application/html' });    
+}
+```
+
 ### API Gateway
 
 ### Context
-
-### Parameters
 
 ### HTTP
 
