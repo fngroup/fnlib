@@ -25,6 +25,7 @@ Fnlib is, as its most simple specification, an outsourcing solution. Since you'r
 ### well-designed specification for human
 
 Serverless has grown wildly in recent years, and every manufacturer has its own standards. In order to be compatible with multiple platforms, developers inevitably have to write a lot of logic to be compatible. All of them also derive some open source software to be compatible with multiple implementations with one interface, but these open source software are currently independent of each other.
+
 Fnlib wants to provide a standard set of specifications that let developers use the FaaS interface just like building a Web page.
 
 ## Specifications
