@@ -30,7 +30,7 @@ Fnlib wants to provide a standard set of specifications that let developers use 
 
 ## Specifications
 
-## Function
+### Function
 
 The **Function** is the most basic component of each FaaS program.
 
@@ -42,13 +42,13 @@ module.exports = async function demo_function (context, callback) {
 }
 ```
 
-In an asynchronous language like JavaScript, Fblib requires that each function use **async** to avoid problems caused by asynchronous.
+In an asynchronous language like JavaScript, fnlib requires that each function use **async** to avoid problems caused by asynchronous.
 
-### Parameters
+#### Parameters
 
 As seen in the function above, each function has two parameters: ```context``` and ```callback```.
 
-#### context
+##### context
 
 Context is the object used to access the function execution context, Such as the parameters in the url, http header.
 
@@ -56,7 +56,7 @@ If function is consumed over HTTP, ```context``` object **MUST** contain the fol
 
 Field |type    | descriptions
 ------|--------|------------
-params| object | Parameters that are transmitted via http or function call
+params| object | Parameters that are transmitted via http or function call
 http  | object | null if not accessed via http, otherwise an object
 http.headers| object | If accessed via HTTP, an object containing header values
 
@@ -73,9 +73,9 @@ For example:
 }
 ```
 
-This json fragment may indicate that the execution context specifically accesses authenticated user id and email addresses. if ```currentUser``` is null, the developer can determine that the currently accessed user is not logged in. 
+This JSON fragment may indicate that the execution context specifically accesses authenticated user id and email addresses. if ```currentUser``` is null, the developer can determine that the currently accessed user is not logged in. 
 
-#### callback
+##### callback
 
 ```Callback``` is to end the function or send http response, which has two parameters.
 
