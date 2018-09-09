@@ -73,19 +73,20 @@ For example:
 }
 ```
 
-This JSON fragment may indicate that the execution context specifically accesses authenticated user id and email addresses. if ```currentUser``` is null, the developer can determine that the currently accessed user is not logged in. 
+This JSON fragment may indicate that the execution context specifically accesses authenticated user id and username. if ```currentUser``` is null, the developer can determine that the currently accessed user is not logged in. 
 
 **callback**
 
 ```Callback``` is to end the function or send http response, which has two parameters.
 
 ``` javascript
-callback(data[, httpHeaders]);
+callback(data[, code, httpHeaders]);
 ```
 
 Parameter Name |type    | descriptions
 ------|--------|------------
 data| Any | The data want to return
+code | Number | HTTP Response Code, default is 200
 httpHeaders  | Object | A key-value pairs that represent HTTP Headers.
 
 For example, to return an html that's of type ```application/html```:
