@@ -69,7 +69,7 @@ For example:
 ``` javascript
 "context": {
     "currentUser": {
-        "_id": "000000", 
+        "_id": "000000",
         "username": "fnlib"
     }
 }

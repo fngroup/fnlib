@@ -73,7 +73,7 @@ http.headers| Object | 如果通过 HTTP 访问，则为包含 HTTP Header 的�
 ``` javascript
 "context": {
     "currentUser": {
-        "_id": "000000", 
+        "_id": "000000",
         "username": "fnlib"
     }
 }
@@ -133,7 +133,7 @@ module.exports = (context, callback) => {
 字段名城 |类型    | 描述
 ------|--------|------------
 type| String |  错误类型名称
-message  | String | 相惜的错误信息
+message  | String | 详细的错误信息
 payload | Object | 一个可选对象，用来描述详细的错误信息
 
 错误类型如下：
