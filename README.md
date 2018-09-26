@@ -178,9 +178,43 @@ Byte      |
 Float     |
 Null      |
 
+### Development Tools
+
+The FaaS platform requires convenient development tools for developers to use, and can be divided into two general categories:
+
+1. Online code editor
+2. Command line
+
+#### Online code editor
+
+An online code editor allows developers to debug FaaS programs online.
+
+A complete online code editor must have at least the following features:
+
+1. ```Function Manager```, used to manage all functions in the project, including creation, deletion, modification;
+2. ```log output```, used to display debugging information and HTTP return information;
+3. ```Debugger```, used to enter request data and view return data Header and Response;
+4. ```Version Control```, used to manage the function version, and can be quickly launched and rolled back with one click;
+5. ```Code editor```, used to write code;
+6. ```Controllable UI```, the above five functions can be divided into five panels, which can drag and drop size and close, giving developers the ability to control as they like;
+
+#### Command line
+
+Command Exercising Developers can debug FaaS programs locally.
+
+A complete command line must have at least the following features:
+
+1. ```Initialize project`` to create a project structure that conforms to the implementation FaaS standard;
+2. ```Create a function ```, create a file in which you can write the function directly;
+3. ```Deploy function ```, deploy the function to the cloud;
+4. ```rollback function ```, specify the version rollback function;
+5. ```View the function version ```, view all versions of a function;
+6. ``` Local emulation debugger ```, start a debugger locally for deployment-free debugging functions;
+
 ### TODO
 
 1. GraphQL specification
+2. Database specification
 
 ### Acknowledgements
 
