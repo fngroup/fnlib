@@ -204,7 +204,7 @@ Command Exercising Developers can debug FaaS programs locally.
 
 A complete command line must have at least the following features:
 
-1. ```Initialize project`` to create a project structure that conforms to the implementation FaaS standard;
+1. ```Initialize project``` to create a project structure that conforms to the implementation FaaS standard;
 2. ```Create a function ```, create a file in which you can write the function directly;
 3. ```Deploy function ```, deploy the function to the cloud;
 4. ```rollback function ```, specify the version rollback function;
